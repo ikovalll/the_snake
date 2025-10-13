@@ -30,7 +30,7 @@ APPLE_COLOR = (255, 0, 0)
 SNAKE_COLOR = (0, 255, 0)
 
 # Скорость движения змейки:
-SPEED = 10
+SPEED = 20
 
 # Настройка игрового окна:
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
@@ -91,7 +91,6 @@ class Snake(GameObject):
         self.positions = [self.position]
         self.direction = RIGHT
         self.next_direction = None
-        self.last = None
 
     def update_direction(self):
         """Метод обновления направления после нажатия на кнопку."""
@@ -119,7 +118,7 @@ class Snake(GameObject):
         if new_head in self.positions[1:]:
             self.reset()
             return
-
+        # Новая шолова тут и pop удаляет последний el.
         self.positions.insert(0, new_head)
         if len(self.positions) > self.length:
             self.positions.pop()
@@ -130,16 +129,8 @@ class Snake(GameObject):
             rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
             pygame.draw.rect(screen, self.body_color, rect)
             pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
-
-        """Отрисовка головы змейки."""
-        head_rect = pygame.Rect(self.positions[0], (GRID_SIZE, GRID_SIZE))
-        pygame.draw.rect(screen, self.body_color, head_rect)
-        pygame.draw.rect(screen, BORDER_COLOR, head_rect, 1)
-
-        """Затирание последнего сегмента."""
-        if self.last:
-            last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
-            pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
+            # Убрал отрисовку головы и затирание хвоста
+            # Подсказка от одногрупников.
 
     def get_head_position(self):
         """Возвращает позицию головы змейки, первый el в [positions]."""
