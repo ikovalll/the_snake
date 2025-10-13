@@ -69,8 +69,8 @@ class Apple(GameObject):  # Здесь вроде все готово (Врем�
 
     def randomize_position(self):
         """Рандомно вычисляются координаты в пределах поля."""
-        x_position = randint(0, 31) * GRID_SIZE  # Уменьшил диапазон на 1.
-        y_position = randint(0, 23) * GRID_SIZE  # Уменьшил диапазон на 1.
+        x_position = randint(0, GRID_WIDTH - 1) * GRID_SIZE  # Уменьшил  на 1.
+        y_position = randint(0, GRID_HEIGHT - 1) * GRID_SIZE  # Уменьшил на 1.
         self.position = (x_position, y_position)
 
     def draw(self):
