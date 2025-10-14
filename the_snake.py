@@ -123,8 +123,7 @@ class Snake(GameObject):
         for position in self.positions:  # Тут убрал срез.
             rect = (pg.Rect(position, (GRID_SIZE, GRID_SIZE)))
             pg.draw.rect(screen, self.body_color, rect)
-            pg.draw.rect(screen, BORDER_COLOR, rect, 1)
-            # Убрал отрисовку головы . Подсказка от одногрупников .
+
             if self.last:
                 last_rect = pg.Rect(self.last, (GRID_SIZE, GRID_SIZE))
                 pg.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
@@ -170,8 +169,8 @@ def main():
     while True:
         clock.tick(SPEED)
         handle_keys(snake)
-        snake.update_direction()
         snake.move()
+        snake.update_direction()
 
         if snake.get_head_position() == apple.position:
             snake.length += 1
