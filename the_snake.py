@@ -52,7 +52,10 @@ class GameObject:
 
     def draw(self):
         """Отрисовка обьектов с заглушкой для изменения потом."""
-        raise NotImplementedError('Метод draw надо определить')
+        raise NotImplementedError(
+            f'Метод draw должен быть переопределен в дочернем классе:'
+            f'{self.__class__.__name__}'
+        )
 
 
 class Apple(GameObject):  # Здесь вроде все готово (Временный комент для себя).
