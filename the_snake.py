@@ -146,8 +146,12 @@ def handle_keys(game_object):
         if event.type == pg.QUIT:
             pg.quit()
             raise SystemExit
+
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_UP and game_object.direction != DOWN:
+            if event.key == pg.K_ESCAPE:
+                pg.quit()
+                raise SystemExit
+            elif event.key == pg.K_UP and game_object.direction != DOWN:
                 game_object.next_direction = UP
             elif event.key == pg.K_DOWN and game_object.direction != UP:
                 game_object.next_direction = DOWN
