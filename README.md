@@ -26,7 +26,7 @@ pip install pygame
 
 Run the file:
 
-python main.py
+python the_snake.py
 
 
 Use the arrow keys to move the snake.
