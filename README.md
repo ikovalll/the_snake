@@ -1,42 +1,93 @@
 🐍 Snake Game (Python + Pygame)
 
-A simple version of the classic Snake Game, built with Python and Pygame.
+A simple implementation of the classic Snake Game, built with Python and Pygame.
 
 🎮 About
 
-Control the snake, eat apples 🍎, and try not to hit yourself.
-Each apple makes your snake longer — if you run into your own body, the game restarts.
+Control the snake, eat apples 🍎, and avoid colliding with your own body.
+Each apple makes the snake longer — if you crash into yourself, the game restarts.
 
 ⚙️ Features
 
-Clean, object-oriented code (classes for Snake, Apple, and GameObject)
+Clean, object-oriented architecture
+(separate classes for Snake, Apple, and GameObject)
 
-Smooth movement and keyboard control
+Smooth movement with keyboard controls
 
 Random apple placement
 
-Screen wrapping (snake reappears on the other side)
+Screen wrapping
+(the snake reappears on the opposite side of the screen)
 
-🚀 How to Run
+🚀 Installation & Run
+1️⃣ Clone the repository or download the project
+git clone https://github.com/your-username/snake-game.git
+cd snake-game
 
-Install Pygame:
+
+Or download the archive and extract it manually.
+
+2️⃣ Create and activate a virtual environment (recommended)
+
+macOS / Linux:
+
+python3 -m venv venv
+source venv/bin/activate
+
+
+Windows:
+
+python -m venv venv
+venv\Scripts\activate
+
+
+After activation, (venv) should appear in your terminal.
+
+3️⃣ Install dependencies
+
+If requirements.txt exists:
+
+pip install -r requirements.txt
+
+
+Or install Pygame manually:
 
 pip install pygame
 
-
-Run the file:
-
+4️⃣ Run the game
 python the_snake.py
 
 
-Use the arrow keys to move the snake.
+Use the arrow keys ⬆️⬇️⬅️➡️ to control the snake.
 
-💡 Future Ideas
+🧩 Dependencies
 
-Add score tracking
+Python 3.8+
 
-Add sound and menus
+Pygame
 
-Add difficulty levels
+💡 Notes
 
-⭐️ Made with Python and Pygame.# Update: trigger stats refresh Fri Oct 17 14:59:06 +03 2025
+Using a virtual environment is recommended because it:
+
+isolates project dependencies
+
+avoids conflicts with other Python projects
+
+makes development and future improvements easier
+
+🔮 Future Improvements
+
+Score tracking
+
+Sound effects and menu system
+
+Difficulty levels
+
+Game over screen instead of instant restart
+
+🛠️ Built With
+
+Python 🐍
+
+Pygame 🎮
