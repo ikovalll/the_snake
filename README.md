@@ -20,12 +20,6 @@ Screen wrapping
 (the snake reappears on the opposite side of the screen)
 
 🚀 Installation & Run
-1️⃣ Clone the repository or download the project
-git clone https://github.com/your-username/snake-game.git
-cd snake-game
-
-
-Or download the archive and extract it manually.
 
 2️⃣ Create and activate a virtual environment (recommended)
 
